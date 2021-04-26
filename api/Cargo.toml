@@ -1,0 +1,30 @@
+[package]
+name = "api"
+version = "0.1.0"
+authors = ["Nicolas Polomack <nicolas@polomack.eu>"]
+edition = "2018"
+
+[dependencies]
+async-std = { version = "1.9.0", features = ["attributes", "tokio02"] }
+tide = "0.16.0"
+
+diesel = { version = "1.4.6", features = ["r2d2", "mysql"] }
+diesel_migrations = { version = "1.4.0", features = ["mysql"] }
+
+openidconnect = { version = "1.1.1", features = ["futures-03", "reqwest-010"], default-features = false }
+
+ring = "0.16.20"
+hex = "0.4.3"
+
+serde = { version = "1.0.125", features = ["derive"] }
+json = { version = "1.0.64", package = "serde_json" }
+toml = "0.5.8"
+
+color-eyre = "0.5.10"
+env_logger = "0.8.3"
+log = "0.4.14"
+async-session = "2.0.1"
+feed-rs = "0.6.0"
+reqwest = { version = "0.10", features = ["json"] }
+eyre = "0.6.5"
+percent-encoding = "2.1.0"

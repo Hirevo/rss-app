@@ -1,0 +1,75 @@
+use diesel::prelude::*;
+use tide::utils::async_trait;
+use tide::{Middleware, Next, Request};
+
+use crate::db::models::User;
+use crate::db::schema::*;
+use crate::State;
+
+/// Session cookie's name.
+pub static COOKIE_NAME: &'static str = "session";
+
+pub static USER_ID_KEY: &'static str = "user.id";
+
+/// The authentication middleware for `alexandrie`.
+///
+/// What it does:
+///   - extracts the token from the session cookie.
+///   - tries to match it with an author's session in the database.
+///   - exposes an [`Author`] struct if successful.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Default)]
+pub struct AuthMiddleware;
+
+impl AuthMiddleware {
+    /// Creates a new instance of the middleware.
+    pub fn new() -> AuthMiddleware {
+        AuthMiddleware {}
+    }
+}
+
+#[async_trait]
+impl Middleware<State> for AuthMiddleware {
+    async fn handle(&self, mut req: Request<State>, next: Next<'_, State>) -> tide::Result {
+        let user_id: Option<String> = req.session().get(USER_ID_KEY);
+        log::info!("user_id = {:?}", user_id);
+
+        if let Some(user_id) = user_id {
+            let query = req.state().repo.run(move |conn| {
+                //? Get the session matching the user-provided token.
+                users::table
+                    .find(user_id)
+                    .first::<User>(conn)
+                    .optional()
+            });
+
+            if let Some(user) = query.await? {
+                req.set_ext(user);
+            }
+        }
+
+        let response = next.run(req).await;
+
+        Ok(response)
+    }
+}
+
+/// A trait to extend `Context` with authentication-related helper methods.
+pub trait AuthExt {
+    /// Get the currently-authenticated [`Author`] (returns `None` if not authenticated).
+    fn get_user(&self) -> Option<User>;
+
+    /// Is the user currently authenticated?
+    fn is_authenticated(&self) -> bool {
+        self.get_user().is_some()
+    }
+}
+
+impl AuthExt for Request<State> {
+    fn get_user(&self) -> Option<User> {
+        self.ext::<User>().cloned()
+    }
+
+    fn is_authenticated(&self) -> bool {
+        self.ext::<User>().is_some()
+    }
+}

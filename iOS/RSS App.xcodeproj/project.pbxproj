@@ -1,0 +1,650 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		980281192629D18E00AB8CD9 /* FeedsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980281182629D18E00AB8CD9 /* FeedsScreen.swift */; };
+		9802811E2629D51D00AB8CD9 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802811D2629D51D00AB8CD9 /* Types.swift */; };
+		982E6BB52626CEBD00DE6BDF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982E6BB42626CEBD00DE6BDF /* LoginScreen.swift */; };
+		982E6BBA2626DCA800DE6BDF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982E6BB92626DCA800DE6BDF /* SplashScreen.swift */; };
+		982E6BC92626E9D000DE6BDF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982E6BC82626E9D000DE6BDF /* AppState.swift */; };
+		9851E4E92625B88600A54996 /* RSSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851E4E82625B88600A54996 /* RSSApp.swift */; };
+		9851E4EB2625B88600A54996 /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851E4EA2625B88600A54996 /* RootScreen.swift */; };
+		9851E4ED2625B88800A54996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9851E4EC2625B88800A54996 /* Assets.xcassets */; };
+		9851E4F02625B88800A54996 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9851E4EF2625B88800A54996 /* Preview Assets.xcassets */; };
+		9851E4F22625B88800A54996 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851E4F12625B88800A54996 /* Persistence.swift */; };
+		9851E4F52625B88800A54996 /* RSSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9851E4F32625B88800A54996 /* RSSApp.xcdatamodeld */; };
+		9851E5002625B88800A54996 /* RSS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851E4FF2625B88800A54996 /* RSS_AppTests.swift */; };
+		9851E50B2625B88800A54996 /* RSS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9851E50A2625B88800A54996 /* RSS_AppUITests.swift */; };
+		988601982626FD1B000A520E /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988601972626FD1B000A520E /* RegisterScreen.swift */; };
+		9886019D2626FED3000A520E /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9886019C2626FED3000A520E /* LandingScreen.swift */; };
+		988601A826270A44000A520E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988601A726270A44000A520E /* WebView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9851E4FC2625B88800A54996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9851E4DD2625B88600A54996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9851E4E42625B88600A54996;
+			remoteInfo = "RSS App";
+		};
+		9851E5072625B88800A54996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9851E4DD2625B88600A54996 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9851E4E42625B88600A54996;
+			remoteInfo = "RSS App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		980281182629D18E00AB8CD9 /* FeedsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsScreen.swift; sourceTree = "<group>"; };
+		9802811D2629D51D00AB8CD9 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		982E6BB42626CEBD00DE6BDF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		982E6BB92626DCA800DE6BDF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		982E6BC82626E9D000DE6BDF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9851E4E52625B88600A54996 /* RSS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9851E4E82625B88600A54996 /* RSSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSApp.swift; sourceTree = "<group>"; };
+		9851E4EA2625B88600A54996 /* RootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
+		9851E4EC2625B88800A54996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9851E4EF2625B88800A54996 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9851E4F12625B88800A54996 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		9851E4F42625B88800A54996 /* RSS_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSS_App.xcdatamodel; sourceTree = "<group>"; };
+		9851E4F62625B88800A54996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9851E4FB2625B88800A54996 /* RSS AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSS AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9851E4FF2625B88800A54996 /* RSS_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSS_AppTests.swift; sourceTree = "<group>"; };
+		9851E5012625B88800A54996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9851E5062625B88800A54996 /* RSS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9851E50A2625B88800A54996 /* RSS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSS_AppUITests.swift; sourceTree = "<group>"; };
+		9851E50C2625B88800A54996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		988601972626FD1B000A520E /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		9886019C2626FED3000A520E /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
+		988601A726270A44000A520E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9851E4E22625B88600A54996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9851E4F82625B88800A54996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9851E5032625B88800A54996 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		982E6BBE2626E0C000DE6BDF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9851E4EA2625B88600A54996 /* RootScreen.swift */,
+				982E6BB42626CEBD00DE6BDF /* LoginScreen.swift */,
+				988601972626FD1B000A520E /* RegisterScreen.swift */,
+				982E6BB92626DCA800DE6BDF /* SplashScreen.swift */,
+				9886019C2626FED3000A520E /* LandingScreen.swift */,
+				980281182629D18E00AB8CD9 /* FeedsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9851E4DC2625B88600A54996 = {
+			isa = PBXGroup;
+			children = (
+				9851E4E72625B88600A54996 /* RSS App */,
+				9851E4FE2625B88800A54996 /* RSS AppTests */,
+				9851E5092625B88800A54996 /* RSS AppUITests */,
+				9851E4E62625B88600A54996 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9851E4E62625B88600A54996 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9851E4E52625B88600A54996 /* RSS App.app */,
+				9851E4FB2625B88800A54996 /* RSS AppTests.xctest */,
+				9851E5062625B88800A54996 /* RSS AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9851E4E72625B88600A54996 /* RSS App */ = {
+			isa = PBXGroup;
+			children = (
+				982E6BBE2626E0C000DE6BDF /* Screens */,
+				9851E4E82625B88600A54996 /* RSSApp.swift */,
+				982E6BC82626E9D000DE6BDF /* AppState.swift */,
+				9851E4EC2625B88800A54996 /* Assets.xcassets */,
+				9851E4F12625B88800A54996 /* Persistence.swift */,
+				9851E4F62625B88800A54996 /* Info.plist */,
+				9851E4F32625B88800A54996 /* RSSApp.xcdatamodeld */,
+				9851E4EE2625B88800A54996 /* Preview Content */,
+				988601A726270A44000A520E /* WebView.swift */,
+				9802811D2629D51D00AB8CD9 /* Types.swift */,
+			);
+			path = "RSS App";
+			sourceTree = "<group>";
+		};
+		9851E4EE2625B88800A54996 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9851E4EF2625B88800A54996 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9851E4FE2625B88800A54996 /* RSS AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9851E4FF2625B88800A54996 /* RSS_AppTests.swift */,
+				9851E5012625B88800A54996 /* Info.plist */,
+			);
+			path = "RSS AppTests";
+			sourceTree = "<group>";
+		};
+		9851E5092625B88800A54996 /* RSS AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9851E50A2625B88800A54996 /* RSS_AppUITests.swift */,
+				9851E50C2625B88800A54996 /* Info.plist */,
+			);
+			path = "RSS AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9851E4E42625B88600A54996 /* RSS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9851E50F2625B88800A54996 /* Build configuration list for PBXNativeTarget "RSS App" */;
+			buildPhases = (
+				9851E4E12625B88600A54996 /* Sources */,
+				9851E4E22625B88600A54996 /* Frameworks */,
+				9851E4E32625B88600A54996 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RSS App";
+			packageProductDependencies = (
+			);
+			productName = "RSS App";
+			productReference = 9851E4E52625B88600A54996 /* RSS App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9851E4FA2625B88800A54996 /* RSS AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9851E5122625B88800A54996 /* Build configuration list for PBXNativeTarget "RSS AppTests" */;
+			buildPhases = (
+				9851E4F72625B88800A54996 /* Sources */,
+				9851E4F82625B88800A54996 /* Frameworks */,
+				9851E4F92625B88800A54996 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9851E4FD2625B88800A54996 /* PBXTargetDependency */,
+			);
+			name = "RSS AppTests";
+			productName = "RSS AppTests";
+			productReference = 9851E4FB2625B88800A54996 /* RSS AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9851E5052625B88800A54996 /* RSS AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9851E5152625B88800A54996 /* Build configuration list for PBXNativeTarget "RSS AppUITests" */;
+			buildPhases = (
+				9851E5022625B88800A54996 /* Sources */,
+				9851E5032625B88800A54996 /* Frameworks */,
+				9851E5042625B88800A54996 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9851E5082625B88800A54996 /* PBXTargetDependency */,
+			);
+			name = "RSS AppUITests";
+			productName = "RSS AppUITests";
+			productReference = 9851E5062625B88800A54996 /* RSS AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9851E4DD2625B88600A54996 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					9851E4E42625B88600A54996 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					9851E4FA2625B88800A54996 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 9851E4E42625B88600A54996;
+					};
+					9851E5052625B88800A54996 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 9851E4E42625B88600A54996;
+					};
+				};
+			};
+			buildConfigurationList = 9851E4E02625B88600A54996 /* Build configuration list for PBXProject "RSS App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9851E4DC2625B88600A54996;
+			packageReferences = (
+			);
+			productRefGroup = 9851E4E62625B88600A54996 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9851E4E42625B88600A54996 /* RSS App */,
+				9851E4FA2625B88800A54996 /* RSS AppTests */,
+				9851E5052625B88800A54996 /* RSS AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9851E4E32625B88600A54996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9851E4F02625B88800A54996 /* Preview Assets.xcassets in Resources */,
+				9851E4ED2625B88800A54996 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9851E4F92625B88800A54996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9851E5042625B88800A54996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9851E4E12625B88600A54996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9851E4F52625B88800A54996 /* RSSApp.xcdatamodeld in Sources */,
+				988601A826270A44000A520E /* WebView.swift in Sources */,
+				980281192629D18E00AB8CD9 /* FeedsScreen.swift in Sources */,
+				9802811E2629D51D00AB8CD9 /* Types.swift in Sources */,
+				9851E4F22625B88800A54996 /* Persistence.swift in Sources */,
+				9851E4EB2625B88600A54996 /* RootScreen.swift in Sources */,
+				982E6BB52626CEBD00DE6BDF /* LoginScreen.swift in Sources */,
+				9886019D2626FED3000A520E /* LandingScreen.swift in Sources */,
+				988601982626FD1B000A520E /* RegisterScreen.swift in Sources */,
+				9851E4E92625B88600A54996 /* RSSApp.swift in Sources */,
+				982E6BC92626E9D000DE6BDF /* AppState.swift in Sources */,
+				982E6BBA2626DCA800DE6BDF /* SplashScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9851E4F72625B88800A54996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9851E5002625B88800A54996 /* RSS_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9851E5022625B88800A54996 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9851E50B2625B88800A54996 /* RSS_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9851E4FD2625B88800A54996 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9851E4E42625B88600A54996 /* RSS App */;
+			targetProxy = 9851E4FC2625B88800A54996 /* PBXContainerItemProxy */;
+		};
+		9851E5082625B88800A54996 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9851E4E42625B88600A54996 /* RSS App */;
+			targetProxy = 9851E5072625B88800A54996 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9851E50D2625B88800A54996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9851E50E2625B88800A54996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9851E5102625B88800A54996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RSS App/Preview Content\"";
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "RSS App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.polomack.RSSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9851E5112625B88800A54996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"RSS App/Preview Content\"";
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "RSS App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eu.polomack.RSSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9851E5132625B88800A54996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSS App.app/RSS App";
+			};
+			name = Debug;
+		};
+		9851E5142625B88800A54996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSS App.app/RSS App";
+			};
+			name = Release;
+		};
+		9851E5162625B88800A54996 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "RSS App";
+			};
+			name = Debug;
+		};
+		9851E5172625B88800A54996 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "RSS App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9851E4E02625B88600A54996 /* Build configuration list for PBXProject "RSS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9851E50D2625B88800A54996 /* Debug */,
+				9851E50E2625B88800A54996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9851E50F2625B88800A54996 /* Build configuration list for PBXNativeTarget "RSS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9851E5102625B88800A54996 /* Debug */,
+				9851E5112625B88800A54996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9851E5122625B88800A54996 /* Build configuration list for PBXNativeTarget "RSS AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9851E5132625B88800A54996 /* Debug */,
+				9851E5142625B88800A54996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9851E5152625B88800A54996 /* Build configuration list for PBXNativeTarget "RSS AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9851E5162625B88800A54996 /* Debug */,
+				9851E5172625B88800A54996 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9851E4F32625B88800A54996 /* RSSApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9851E4F42625B88800A54996 /* RSS_App.xcdatamodel */,
+			);
+			currentVersion = 9851E4F42625B88800A54996 /* RSS_App.xcdatamodel */;
+			path = RSSApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9851E4DD2625B88600A54996 /* Project object */;
+}
