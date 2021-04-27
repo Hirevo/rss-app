@@ -8,7 +8,7 @@ create table `users` (
 create table `sessions` (
     `id` varchar(255) not null unique primary key,
     `expiry` varchar(25) not null,
-    `data` text not null,
+    `data` text not null
 );
 create table `tokens` (
     `token` varchar(255) not null unique primary key,
