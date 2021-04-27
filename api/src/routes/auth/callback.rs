@@ -1,11 +1,13 @@
+use chrono::{Duration, Utc};
 use diesel::prelude::*;
 use openidconnect::reqwest::async_http_client;
 use openidconnect::{AsyncCodeTokenRequest, AuthorizationCode, TokenResponse};
 use serde::{Deserialize, Serialize};
 use tide::{Request, Response, StatusCode};
 
-use crate::db::models::User;
+use crate::db::models::{Token, User};
 use crate::db::schema::*;
+use crate::db::DATETIME_FORMAT;
 use crate::utils;
 use crate::utils::auth::AuthExt;
 use crate::State;
@@ -28,7 +30,7 @@ pub async fn get(mut req: Request<State>) -> tide::Result {
         ));
     }
 
-    let data: OidcLoginData = match req.session().get("oidc.login") {
+    let mut data: OidcLoginData = match req.session().get("oidc.login") {
         Some(data) => data,
         None => {
             return Ok(utils::response::error(
@@ -96,7 +98,7 @@ pub async fn get(mut req: Request<State>) -> tide::Result {
         }
     };
 
-    let user = req
+    let token = req
         .state()
         .repo
         .transaction(move |conn| -> tide::Result<_> {
@@ -105,23 +107,38 @@ pub async fn get(mut req: Request<State>) -> tide::Result {
                 .first(conn)
                 .optional()?;
 
-            if let Some(user) = found {
-                Ok(user)
-            } else {
-                diesel::insert_into(users::table)
-                    .values(&user)
-                    .execute(conn)?;
+            let user = match found {
+                Some(user) => user,
+                None => {
+                    diesel::insert_into(users::table)
+                        .values(&user)
+                        .execute(conn)?;
 
-                Ok(user)
-            }
+                    user
+                }
+            };
 
+            let token = Token {
+                token: utils::generate_id(),
+                expiry: (Utc::now() + Duration::seconds(2_592_000))
+                    .format(DATETIME_FORMAT)
+                    .to_string(), // 30 days
+                user_id: user.id.clone(),
+            };
+
+            diesel::insert_into(tokens::table)
+                .values(&token)
+                .execute(conn)?;
+
+            Ok(token)
         })
         .await?;
 
-    req.session_mut()
-        .insert(utils::auth::USER_ID_KEY, &user.id)?;
-    req.session_mut()
-        .insert("user.id_token", id_token.to_string())?;
-
-    Ok(Response::new(200))
+    data.redirect_url
+        .query_pairs_mut()
+        .append_pair("token", token.token.as_str())
+        .finish();
+    Ok(Response::builder(303)
+        .header("location", data.redirect_url.into_string())
+        .build())
 }

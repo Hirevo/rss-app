@@ -7,9 +7,13 @@ create table `users` (
 );
 create table `sessions` (
     `id` varchar(255) not null unique primary key,
-    `user_id` varchar(255),
     `expiry` varchar(25) not null,
     `data` text not null,
+);
+create table `tokens` (
+    `token` varchar(255) not null unique primary key,
+    `user_id` varchar(255) not null,
+    `expiry` varchar(25) not null,
     foreign key (`user_id`) references `users`(`id`) on update cascade on delete cascade
 );
 create table `salts` (

@@ -1,4 +1,6 @@
 use diesel::prelude::*;
+use once_cell::sync::Lazy;
+use regex::Regex;
 use tide::utils::async_trait;
 use tide::{Middleware, Next, Request};
 
@@ -10,6 +12,9 @@ use crate::State;
 pub static COOKIE_NAME: &'static str = "session";
 
 pub static USER_ID_KEY: &'static str = "user.id";
+
+pub static AUTHORIZATION_VALUE_PATTERN: Lazy<Regex> =
+    Lazy::new(|| Regex::new(r#"^Bearer (.*)$"#).unwrap());
 
 /// The authentication middleware for `alexandrie`.
 ///
@@ -30,14 +35,19 @@ impl AuthMiddleware {
 #[async_trait]
 impl Middleware<State> for AuthMiddleware {
     async fn handle(&self, mut req: Request<State>, next: Next<'_, State>) -> tide::Result {
-        let user_id: Option<String> = req.session().get(USER_ID_KEY);
-        log::info!("user_id = {:?}", user_id);
+        let maybe_token = req
+            .header("authorization")
+            .and_then(|value| AUTHORIZATION_VALUE_PATTERN.captures(value.as_str()))
+            .and_then(|captures| captures.get(1))
+            .map(|capture| capture.as_str().to_string());
 
-        if let Some(user_id) = user_id {
+        if let Some(token) = maybe_token {
             let query = req.state().repo.run(move |conn| {
                 //? Get the session matching the user-provided token.
                 users::table
-                    .find(user_id)
+                    .inner_join(tokens::table)
+                    .select(users::all_columns)
+                    .filter(tokens::token.eq(token.as_str()))
                     .first::<User>(conn)
                     .optional()
             });

@@ -57,11 +57,18 @@ table! {
 }
 
 table! {
+    tokens (token) {
+        token -> Varchar,
+        user_id -> Varchar,
+        expiry -> Varchar,
+    }
+}
+
+table! {
     sessions (id) {
         id -> Varchar,
-        user_id -> Nullable<Varchar>,
         expiry -> Varchar,
-        data -> Text,
+        data -> Varchar,
     }
 }
 
@@ -70,7 +77,7 @@ joinable!(articles_read -> articles (article_id));
 joinable!(articles_read -> users (user_id));
 joinable!(feed_categories -> feeds (feed_id));
 joinable!(salts -> users (user_id));
-joinable!(sessions -> users (user_id));
+joinable!(tokens -> users (user_id));
 joinable!(subscriptions -> feeds (feed_id));
 joinable!(subscriptions -> users (user_id));
 
@@ -80,7 +87,8 @@ allow_tables_to_appear_in_same_query!(
     feeds,
     feed_categories,
     salts,
-    sessions,
+    tokens,
     subscriptions,
     users,
+    sessions,
 );

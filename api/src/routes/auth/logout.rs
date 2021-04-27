@@ -1,8 +1,8 @@
 use tide::{Request, Response, StatusCode};
 
 use crate::utils;
-use crate::State;
 use crate::utils::auth::AuthExt;
+use crate::State;
 
 /// Route to log in to an account.
 pub async fn post(mut req: Request<State>) -> tide::Result {

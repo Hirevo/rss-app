@@ -9,7 +9,6 @@ use crate::db::models::Session as SessionRecord;
 use crate::db::schema::*;
 use crate::db::DATETIME_FORMAT;
 use crate::db::{Connection, Repo};
-use crate::utils;
 
 /// A SQL-based session store.
 #[derive(Clone)]
@@ -54,18 +53,12 @@ impl SessionStore for SqlStore {
     async fn store_session(&self, session: Session) -> async_session::Result<Option<String>> {
         let id = session.id().to_string();
         let data = json::to_string(&session)?;
-        let user_id: Option<String> = session.get(utils::auth::USER_ID_KEY);
         let expiry = session
             .expiry()
             .map(|it| it.format(DATETIME_FORMAT).to_string())
             .unwrap_or_default();
 
-        let record = SessionRecord {
-            id,
-            user_id,
-            expiry,
-            data,
-        };
+        let record = SessionRecord { id, expiry, data };
 
         // eprintln!("storing session: {:?}", record);
 
@@ -78,7 +71,6 @@ impl SessionStore for SqlStore {
                     diesel::update(sessions::table.find(&record.id))
                         .set((
                             sessions::id.eq(&record.id),
-                            sessions::user_id.eq(&record.user_id),
                             sessions::expiry.eq(&record.expiry),
                             sessions::data.eq(&record.data),
                         ))
@@ -87,7 +79,6 @@ impl SessionStore for SqlStore {
                     diesel::insert_into(sessions::table)
                         .values((
                             sessions::id.eq(&record.id),
-                            sessions::user_id.eq(&record.user_id),
                             sessions::expiry.eq(&record.expiry),
                             sessions::data.eq(&record.data),
                         ))

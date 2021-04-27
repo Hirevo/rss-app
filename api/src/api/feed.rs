@@ -1,7 +1,7 @@
 use diesel::prelude::*;
 use tide::{Request, Response, StatusCode};
 
-use crate::db::models::{Feed};
+use crate::db::models::Feed;
 use crate::db::schema::*;
 use crate::utils;
 use crate::utils::auth::AuthExt;

@@ -64,18 +64,40 @@ pub struct Salt {
     Associations,
     AsChangeset,
 )]
-#[table_name = "sessions"]
+#[table_name = "tokens"]
 #[belongs_to(User)]
+#[primary_key(token)]
+/// Represents an authentication token in the database.
+pub struct Token {
+    /// The token itself.
+    pub token: String,
+    /// The token's related user ID.
+    pub user_id: String,
+    /// The token's expiry date.
+    pub expiry: String,
+}
+
+#[derive(
+    Debug,
+    Clone,
+    PartialEq,
+    Serialize,
+    Deserialize,
+    Queryable,
+    Insertable,
+    Identifiable,
+    Associations,
+    AsChangeset,
+)]
+#[table_name = "sessions"]
 #[primary_key(id)]
 /// Represents a session in the database.
 pub struct Session {
     /// The session's ID.
     pub id: String,
-    /// The session's related author ID.
-    pub user_id: Option<String>,
     /// The session's expiry date.
     pub expiry: String,
-    /// The session's associated data.
+    /// The session's data.
     pub data: String,
 }
 

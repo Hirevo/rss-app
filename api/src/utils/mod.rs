@@ -1,5 +1,5 @@
-use ring::rand::{SecureRandom, SystemRandom};
 use ring::digest as hasher;
+use ring::rand::{SecureRandom, SystemRandom};
 
 /// Various authentication-related utilities.
 pub mod auth;

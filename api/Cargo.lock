@@ -90,6 +90,7 @@ version = "0.1.0"
 dependencies = [
  "async-session",
  "async-std",
+ "chrono",
  "color-eyre",
  "diesel",
  "diesel_migrations",
@@ -98,14 +99,17 @@ dependencies = [
  "feed-rs",
  "hex",
  "log",
+ "once_cell",
  "openidconnect",
  "percent-encoding 2.1.0",
+ "regex",
  "reqwest 0.10.10",
  "ring",
  "serde",
  "serde_json",
  "tide",
  "toml",
+ "url 2.2.1",
 ]
 
 [[package]]

@@ -1,4 +1,4 @@
-drop table `sessions`;
+drop table `tokens`;
 drop table `salts`;
 drop table `feed_categories`;
 drop table `subscriptions`;

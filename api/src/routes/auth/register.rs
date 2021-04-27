@@ -1,16 +1,18 @@
 use std::num::NonZeroU32;
-use std::time::Duration;
 
+use chrono::{Duration, Utc};
 use diesel::dsl as sql;
 use diesel::prelude::*;
 use ring::digest as hasher;
 use ring::pbkdf2;
 use ring::rand::{SecureRandom, SystemRandom};
 use serde::{Deserialize, Serialize};
-use tide::{Request, Response, StatusCode};
+use tide::{Body, Request, Response, StatusCode};
+use url::Url;
 
-use crate::db::models::{Salt, User};
+use crate::db::models::{Salt, Token, User};
 use crate::db::schema::*;
+use crate::db::DATETIME_FORMAT;
 use crate::utils;
 use crate::utils::auth::AuthExt;
 use crate::State;
@@ -26,6 +28,13 @@ pub struct RequestBody {
     pub password: String,
 }
 
+/// Query params for this route.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct QueryParams {
+    /// The URL to redirect to with a token.
+    pub redirect_url: Option<Url>,
+}
+
 /// Route to register a new account.
 pub async fn post(mut req: Request<State>) -> tide::Result {
     let state = req.state().clone();
@@ -38,6 +47,9 @@ pub async fn post(mut req: Request<State>) -> tide::Result {
             "please log out first to register as a new user",
         ));
     }
+
+    //? Parse query params.
+    let query: QueryParams = req.query()?;
 
     //? Parse request body.
     let body: RequestBody = req.body_json().await?;
@@ -99,13 +111,30 @@ pub async fn post(mut req: Request<State>) -> tide::Result {
             .values(&salt)
             .execute(conn)?;
 
-        let expiry = Duration::from_secs(2_592_000);
+        let token = Token {
+            token: utils::generate_id(),
+            expiry: (Utc::now() + Duration::seconds(2_592_000))
+                .format(DATETIME_FORMAT)
+                .to_string(), // 30 days
+            user_id: user.id.clone(),
+        };
 
-        req.session_mut().expire_in(expiry);
-        req.session_mut()
-            .insert(utils::auth::USER_ID_KEY, &user.id)?;
+        diesel::insert_into(tokens::table)
+            .values(&token)
+            .execute(conn)?;
 
-        Ok(Response::new(200))
+        if let Some(mut redirect_url) = query.redirect_url {
+            redirect_url
+                .query_pairs_mut()
+                .append_pair("token", token.token.as_str())
+                .finish();
+            Ok(Response::builder(303)
+                .header("location", redirect_url.into_string())
+                .build())
+        } else {
+            let body = Body::from_json(&token)?;
+            Ok(Response::builder(200).body(body).build())
+        }
     });
 
     transaction.await
