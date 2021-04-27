@@ -86,7 +86,7 @@ pub async fn put(mut req: Request<State>) -> tide::Result {
                 .as_ref()
                 .map(|it| it.content.clone())
                 .unwrap_or_else(|| entry.id.clone()),
-            url: None,
+            url: entry.links.get(0).map(|it| it.href.clone()),
             html_content: entry.content.as_ref().and_then(|it| it.body.clone()),
         })
         .collect();
