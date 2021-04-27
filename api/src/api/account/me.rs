@@ -8,6 +8,7 @@ use crate::State;
 pub async fn get(req: Request<State>) -> tide::Result {
     match req.get_user() {
         Some(user) => Ok(utils::response::json(&json!({
+            "user_id": user.id,
             "email": user.email,
             "name": user.name,
             "using_google": user.google_uid.is_some(),
