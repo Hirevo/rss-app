@@ -4,7 +4,7 @@ use regex::Regex;
 use tide::utils::async_trait;
 use tide::{Middleware, Next, Request};
 
-use crate::db::models::User;
+use crate::db::models::{Token, User};
 use crate::db::schema::*;
 use crate::State;
 
@@ -46,14 +46,15 @@ impl Middleware<State> for AuthMiddleware {
                 //? Get the session matching the user-provided token.
                 users::table
                     .inner_join(tokens::table)
-                    .select(users::all_columns)
+                    .select((users::all_columns, tokens::all_columns))
                     .filter(tokens::token.eq(token.as_str()))
-                    .first::<User>(conn)
+                    .first::<(User, Token)>(conn)
                     .optional()
             });
 
-            if let Some(user) = query.await? {
+            if let Some((user, token)) = query.await? {
                 req.set_ext(user);
+                req.set_ext(token);
             }
         }
 
@@ -72,6 +73,8 @@ pub trait AuthExt {
     fn is_authenticated(&self) -> bool {
         self.get_user().is_some()
     }
+
+    fn get_token(&self) -> Option<Token>;
 }
 
 impl AuthExt for Request<State> {
@@ -81,5 +84,9 @@ impl AuthExt for Request<State> {
 
     fn is_authenticated(&self) -> bool {
         self.ext::<User>().is_some()
+    }
+
+    fn get_token(&self) -> Option<Token> {
+        self.ext::<Token>().cloned()
     }
 }
