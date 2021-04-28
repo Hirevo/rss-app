@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 use diesel::prelude::*;
 use tide::{Request, StatusCode};
@@ -36,7 +36,13 @@ pub async fn get(req: Request<State>) -> tide::Result {
         })
         .await?;
 
-    let categories: HashMap<String, Feed> = results.into_iter().collect();
+    let mut categories: BTreeMap<String, Vec<Feed>> = BTreeMap::new();
+    for (category, feed) in results {
+        categories
+            .entry(category)
+            .and_modify(|feeds| feeds.push(feed.clone()))
+            .or_insert_with(|| vec![feed.clone()]);
+    }
 
     Ok(utils::response::json(&categories))
 }
