@@ -1,5 +1,6 @@
 
 import SwiftUI
+import BetterSafariView
 
 struct RegisterScreen: View {
     @State private var email: String = ""
@@ -50,7 +51,7 @@ struct RegisterScreen: View {
                 Rectangle().frame(height: 2)
             }
 
-            Button(action: register) {
+            Button(action: { presentingSafariView = true }) {
                 HStack {
                     Image("Google")
                         .resizable()
@@ -62,49 +63,36 @@ struct RegisterScreen: View {
             .overlay(RoundedRectangle(cornerRadius: 5).stroke(FG_COLOR))
         }.padding()
         .disabled(loading)
-        .sheet(isPresented: $presentingSafariView) { webView }
-    }
-    
-    let googleAuthURL = "http://192.168.1.49:3000/auth/google"
-    let callbackURL = "http://192.168.1.49:3000/"
-    var webView: some View {
-        NavigationView {
-            WebView(url: googleAuthURL, target: callbackURL) { view in
-                presentingSafariView = false
-                view.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
-                    let cookies = cookies.filter {
-                        cookie in cookie.domain == "192.168.1.49:3000"
-                    }
-                    
-                    URLSession.shared.configuration.httpCookieStorage?
-                        .setCookies(cookies, for: nil, mainDocumentURL: nil)
-                    
-                    state.refreshSession {
-                        
+        .webAuthenticationSession(isPresented: $presentingSafariView) {
+            WebAuthenticationSession(
+                url: URL(string: "https://rss.polomack.eu/auth/google")!,
+                callbackURLScheme: "rss-app"
+            ) { callbackURL, error in
+                if let callbackURL = callbackURL {
+                    let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems
+                    let token = queryItems?.filter({$0.name == "token"}).first
+                    if let token = token?.value {
+                        state.login(token: token) {
+                            loading = false
+                        }
+                    } else {
+                        loading = false
                     }
                 }
+
             }
-            .navigationBarTitle("Login with Google", displayMode: .inline)
-            .navigationBarItems(leading: Button(
-                action: {
-                    presentingSafariView = false
-                },
-                label: {
-                    Text("Cancel")
-                }
-            ))
+            .prefersEphemeralWebBrowserSession(false)
         }
     }
-    
+
     func register() {
-    }
-    
-    func cancel() {
+        loading = true
+        state.register(email: email, name: name, password: password) { loading = false }
     }
 }
 
-struct RegisterScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterScreen()
-    }
-}
+//struct RegisterScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterScreen()
+//    }
+//}

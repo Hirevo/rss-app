@@ -3,13 +3,14 @@ import SwiftUI
 import WebKit
 
 struct HTMLWebView: UIViewRepresentable {
-    var text: String
+    var html: String
 
     func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
+        let webConfiguration = WKWebViewConfiguration()
+        return WKWebView(frame: .zero, configuration: webConfiguration)
     }
-   
+
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.loadHTMLString(text, baseURL: nil)
+        uiView.loadHTMLString(html, baseURL: nil)
     }
 }

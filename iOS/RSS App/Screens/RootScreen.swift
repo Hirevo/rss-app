@@ -1,6 +1,5 @@
 
 import SwiftUI
-import CoreData
 
 struct RootScreen: View {
     @EnvironmentObject private var state: AppState
@@ -9,30 +8,13 @@ struct RootScreen: View {
 
     var body: some View {
         VStack {
-            if initialized {
-                if state.loggedIn {
-                    VStack {
-                        VStack(alignment: .center, spacing: 5) {
-                            Text("Logged in as:")
-                            Text(state.email!).bold()
-                        }
-                        Button {
-                            state.logout()
-                        } label: {
-                            Text("Log out")
-                        }
-                    }.font(.title2)
-                } else {
-                    LandingScreen()
-                }
+            if state.loggedIn {
+                TabsScreen()
             } else {
-                SplashScreen()
-            }
-        }.onAppear {
-            state.refreshSession {
-                initialized = true
+                LandingScreen()
             }
         }
+
     }
 }
 

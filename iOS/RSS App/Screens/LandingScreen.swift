@@ -1,9 +1,3 @@
-//
-//  LandingScreen.swift
-//  RSS App
-//
-//  Created by Nicolas Polomack on 14/04/2021.
-//
 
 import SwiftUI
 
@@ -23,8 +17,8 @@ struct LandingScreen: View {
     }
 }
 
-struct LandingScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        LandingScreen()
-    }
-}
+//struct LandingScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LandingScreen()
+//    }
+//}

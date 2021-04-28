@@ -1,5 +1,6 @@
 
 import SwiftUI
+import BetterSafariView
 
 struct LoginScreen: View {
     @State private var email: String = ""
@@ -45,7 +46,10 @@ struct LoginScreen: View {
                 Rectangle().frame(height: 2)
             }
             
-            Button(action: { presentingSafariView = true }) {
+            Button(action: {
+                loading = true
+                presentingSafariView = true
+            }) {
                 HStack {
                     Image("Google")
                         .resizable()
@@ -58,35 +62,27 @@ struct LoginScreen: View {
         }
         .padding()
         .disabled(loading)
-        .sheet(isPresented: $presentingSafariView) { webView }
-    }
-
-    let googleAuthURL = "https://rss.polomack.eu/auth/google"
-    let callbackURL = "https://rss.polomack.eu/"
-    var webView: some View {
-        NavigationView {
-            WebView(url: googleAuthURL, target: callbackURL) { view in
-                presentingSafariView = false
-                view.configuration.websiteDataStore.httpCookieStore.getAllCookies { cookies in
-                    let cookies = cookies.filter {
-                        cookie in cookie.domain == "rss.polomack.eu"
+        .webAuthenticationSession(isPresented: $presentingSafariView) {
+            WebAuthenticationSession(
+                url: URL(string: "https://rss.polomack.eu/auth/google?redirect_url=\("rss-app://".addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)")!,
+                callbackURLScheme: "rss-app"
+            ) { callbackURL, error in
+                if let callbackURL = callbackURL {
+                    let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems
+                    let token = queryItems?.filter({$0.name == "token"}).first
+                    if let token = token?.value {
+                        state.login(token: token) {
+                            loading = false
+                        }
+                    } else {
+                        loading = false
                     }
-                    
-                    URLSession.shared.configuration.httpCookieStorage?
-                        .setCookies(cookies, for: nil, mainDocumentURL: nil)
-                    
-                    state.refreshSession()
                 }
             }
-            .navigationBarTitle("Login with Google", displayMode: .inline)
-            .navigationBarItems(leading: Button {
-                presentingSafariView = false
-            } label: {
-                Text("Cancel")
-            })
+            .prefersEphemeralWebBrowserSession(false)
         }
     }
-    
+
     func login() {
         loading = true
         state.login(email: email, password: password) { loading = false }

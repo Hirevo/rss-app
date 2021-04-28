@@ -7,6 +7,8 @@ struct AddFeedScreen: View {
     @EnvironmentObject var state: AppState
     @Environment(\.presentationMode) var presentationMode
 
+    var onDismiss: () -> Void
+
     var body: some View {
         NavigationView {
             Form {
@@ -33,6 +35,7 @@ struct AddFeedScreen: View {
             .navigationBarTitle("Add Feed", displayMode: .inline)
             .navigationBarItems(trailing: Button {
                 self.state.addFeed(feedUrl: url) {
+                    onDismiss()
                     self.presentationMode.wrappedValue.dismiss()
                 }
             } label: {

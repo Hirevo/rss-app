@@ -6,16 +6,11 @@ struct SplashScreen: View {
 
     var body: some View {
         Text("RSS App").font(.title).bold()
-        Button {
-            state.refreshSession()
-        } label: {
-            Text("Refresh").bold()
-        }
     }
 }
 
-struct SplashScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SplashScreen()
-    }
-}
+//struct SplashScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SplashScreen()
+//    }
+//}

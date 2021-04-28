@@ -1,18 +1,21 @@
-//
-//  Types.swift
-//  RSS App
-//
-//  Created by Nicolas Polomack on 16/04/2021.
-//
 
-struct Feed {
-    var name: String
+struct Feed: Decodable, Identifiable {
+    var id: String
+    var title: String
+    var description: String?
+    var feedUrl: String?
+    var homepageUrl: String?
 }
 
-struct Article {
-    var markedAsRead: Bool
+struct Article: Decodable, Identifiable {
+//    var markedAsRead: Bool
+    var id: String
+    var feedId: String
+    var title: String
+    var url: String?
+    var htmlContent: String?
 }
 
-struct Category {
-    
+struct Category: Decodable, Identifiable {
+    var id: String
 }

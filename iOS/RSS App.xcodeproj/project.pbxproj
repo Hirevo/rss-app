@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		980281192629D18E00AB8CD9 /* FeedsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980281182629D18E00AB8CD9 /* FeedsScreen.swift */; };
 		9802811E2629D51D00AB8CD9 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802811D2629D51D00AB8CD9 /* Types.swift */; };
+		981514D526392462005B0C67 /* CategoriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981514D426392462005B0C67 /* CategoriesScreen.swift */; };
+		981514DD263925CF005B0C67 /* CategoryFeedsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981514DC263925CF005B0C67 /* CategoryFeedsScreen.swift */; };
+		98223E0B26392EB500BFE53A /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E0A26392EB500BFE53A /* SettingsScreen.swift */; };
 		982E6BB52626CEBD00DE6BDF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982E6BB42626CEBD00DE6BDF /* LoginScreen.swift */; };
 		982E6BBA2626DCA800DE6BDF /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982E6BB92626DCA800DE6BDF /* SplashScreen.swift */; };
 		982E6BC92626E9D000DE6BDF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982E6BC82626E9D000DE6BDF /* AppState.swift */; };
@@ -23,6 +26,13 @@
 		988601982626FD1B000A520E /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988601972626FD1B000A520E /* RegisterScreen.swift */; };
 		9886019D2626FED3000A520E /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9886019C2626FED3000A520E /* LandingScreen.swift */; };
 		988601A826270A44000A520E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988601A726270A44000A520E /* WebView.swift */; };
+		98A996582639117C008D2594 /* TabsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A996572639117C008D2594 /* TabsScreen.swift */; };
+		98BE18412638137000606C62 /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 98BE18402638137000606C62 /* BetterSafariView */; };
+		98BE184626382E6300606C62 /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE184526382E6300606C62 /* ArticlesScreen.swift */; };
+		98BE184B26382F8100606C62 /* AddFeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE184A26382F8100606C62 /* AddFeedScreen.swift */; };
+		98BE18502638327000606C62 /* ArticleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE184F2638327000606C62 /* ArticleScreen.swift */; };
+		98BE1855263833E500606C62 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE1854263833E500606C62 /* TextView.swift */; };
+		98BE185A2638373800606C62 /* HTMLWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE18592638373800606C62 /* HTMLWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +55,9 @@
 /* Begin PBXFileReference section */
 		980281182629D18E00AB8CD9 /* FeedsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsScreen.swift; sourceTree = "<group>"; };
 		9802811D2629D51D00AB8CD9 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		981514D426392462005B0C67 /* CategoriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScreen.swift; sourceTree = "<group>"; };
+		981514DC263925CF005B0C67 /* CategoryFeedsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFeedsScreen.swift; sourceTree = "<group>"; };
+		98223E0A26392EB500BFE53A /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		982E6BB42626CEBD00DE6BDF /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		982E6BB92626DCA800DE6BDF /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		982E6BC82626E9D000DE6BDF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -65,6 +78,12 @@
 		988601972626FD1B000A520E /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		9886019C2626FED3000A520E /* LandingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
 		988601A726270A44000A520E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		98A996572639117C008D2594 /* TabsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsScreen.swift; sourceTree = "<group>"; };
+		98BE184526382E6300606C62 /* ArticlesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
+		98BE184A26382F8100606C62 /* AddFeedScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFeedScreen.swift; sourceTree = "<group>"; };
+		98BE184F2638327000606C62 /* ArticleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleScreen.swift; sourceTree = "<group>"; };
+		98BE1854263833E500606C62 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		98BE18592638373800606C62 /* HTMLWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BE18412638137000606C62 /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,11 +116,18 @@
 			isa = PBXGroup;
 			children = (
 				9851E4EA2625B88600A54996 /* RootScreen.swift */,
+				981514D426392462005B0C67 /* CategoriesScreen.swift */,
+				98BE184A26382F8100606C62 /* AddFeedScreen.swift */,
 				982E6BB42626CEBD00DE6BDF /* LoginScreen.swift */,
 				988601972626FD1B000A520E /* RegisterScreen.swift */,
 				982E6BB92626DCA800DE6BDF /* SplashScreen.swift */,
 				9886019C2626FED3000A520E /* LandingScreen.swift */,
 				980281182629D18E00AB8CD9 /* FeedsScreen.swift */,
+				981514DC263925CF005B0C67 /* CategoryFeedsScreen.swift */,
+				98BE184526382E6300606C62 /* ArticlesScreen.swift */,
+				98BE184F2638327000606C62 /* ArticleScreen.swift */,
+				98A996572639117C008D2594 /* TabsScreen.swift */,
+				98223E0A26392EB500BFE53A /* SettingsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -137,7 +164,9 @@
 				9851E4F32625B88800A54996 /* RSSApp.xcdatamodeld */,
 				9851E4EE2625B88800A54996 /* Preview Content */,
 				988601A726270A44000A520E /* WebView.swift */,
+				98BE18592638373800606C62 /* HTMLWebView.swift */,
 				9802811D2629D51D00AB8CD9 /* Types.swift */,
+				98BE1854263833E500606C62 /* TextView.swift */,
 			);
 			path = "RSS App";
 			sourceTree = "<group>";
@@ -185,6 +214,7 @@
 			);
 			name = "RSS App";
 			packageProductDependencies = (
+				98BE18402638137000606C62 /* BetterSafariView */,
 			);
 			productName = "RSS App";
 			productReference = 9851E4E52625B88600A54996 /* RSS App.app */;
@@ -258,6 +288,7 @@
 			);
 			mainGroup = 9851E4DC2625B88600A54996;
 			packageReferences = (
+				98BE183F2638137000606C62 /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 			);
 			productRefGroup = 9851E4E62625B88600A54996 /* Products */;
 			projectDirPath = "";
@@ -302,17 +333,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				9851E4F52625B88800A54996 /* RSSApp.xcdatamodeld in Sources */,
+				98223E0B26392EB500BFE53A /* SettingsScreen.swift in Sources */,
 				988601A826270A44000A520E /* WebView.swift in Sources */,
+				98BE18502638327000606C62 /* ArticleScreen.swift in Sources */,
 				980281192629D18E00AB8CD9 /* FeedsScreen.swift in Sources */,
 				9802811E2629D51D00AB8CD9 /* Types.swift in Sources */,
 				9851E4F22625B88800A54996 /* Persistence.swift in Sources */,
+				98BE184B26382F8100606C62 /* AddFeedScreen.swift in Sources */,
+				981514DD263925CF005B0C67 /* CategoryFeedsScreen.swift in Sources */,
 				9851E4EB2625B88600A54996 /* RootScreen.swift in Sources */,
 				982E6BB52626CEBD00DE6BDF /* LoginScreen.swift in Sources */,
+				98BE1855263833E500606C62 /* TextView.swift in Sources */,
 				9886019D2626FED3000A520E /* LandingScreen.swift in Sources */,
+				981514D526392462005B0C67 /* CategoriesScreen.swift in Sources */,
 				988601982626FD1B000A520E /* RegisterScreen.swift in Sources */,
+				98BE185A2638373800606C62 /* HTMLWebView.swift in Sources */,
 				9851E4E92625B88600A54996 /* RSSApp.swift in Sources */,
 				982E6BC92626E9D000DE6BDF /* AppState.swift in Sources */,
 				982E6BBA2626DCA800DE6BDF /* SplashScreen.swift in Sources */,
+				98BE184626382E6300606C62 /* ArticlesScreen.swift in Sources */,
+				98A996582639117C008D2594 /* TabsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +672,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		98BE183F2638137000606C62 /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		98BE18402638137000606C62 /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 98BE183F2638137000606C62 /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9851E4F32625B88800A54996 /* RSSApp.xcdatamodeld */ = {
