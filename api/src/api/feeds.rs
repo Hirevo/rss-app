@@ -1,3 +1,5 @@
+use std::ops::Deref;
+
 use diesel::dsl as sql;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
@@ -112,9 +114,9 @@ pub async fn put(mut req: Request<State>) -> tide::Result {
                 sql::select(sql::exists(feeds::table.find(&feed.id))).get_result(conn)?;
 
             if exists {
-                diesel::update(feeds::table).set(&feed).execute(conn)?;
+                let _: Feed = feed.save_changes(conn.deref())?;
                 for article in &articles {
-                    diesel::update(articles::table).set(article).execute(conn)?;
+                    let _: Article = article.save_changes(conn.deref())?;
                 }
                 diesel::delete(
                     feed_categories::table.filter(feed_categories::feed_id.eq(&feed.id)),
