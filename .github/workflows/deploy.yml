@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ios_build:
+    name: Build iOS app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Install gpg
+        run: brew install gnupg
+      - name: Setup provisioning profile
+        env:
+          IOS_KEYS: ${{ secrets.IOS_KEYS }}
+        run: ./.github/secrets/decrypt-secrets.sh
+      - name: Archiving project
+        run: ./.github/scripts/archive-app.sh
+      - name: Exporting .ipa
+        run: ./.github/scripts/export-ipa.sh
+      - name: Move to static folder
+        run: |
+          mkdir -p 'web/public/apps/iOS'
+          mv 'build/iOS/RSS App.ipa' 'web/public/apps/iOS/RSS App.ipa'
