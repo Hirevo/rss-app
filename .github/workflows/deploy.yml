@@ -17,12 +17,13 @@ jobs:
       - name: Setup provisioning profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: ./.github/scripts/decrypt-secrets.sh
+        run: ./.github/scripts/iOS/decrypt-secrets.sh
       - name: Archiving project
-        run: ./.github/scripts/archive-app.sh
+        run: ./.github/scripts/iOS/archive-app.sh
       - name: Exporting .ipa
-        run: ./.github/scripts/export-ipa.sh
+        run: ./.github/scripts/iOS/export-ipa.sh
       - name: Move to static folder
         run: |
           mkdir -p 'web/public/apps/iOS'
           mv 'build/iOS/RSS App.ipa' 'web/public/apps/iOS/RSS App.ipa'
+  
