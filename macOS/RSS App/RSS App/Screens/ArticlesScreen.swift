@@ -32,6 +32,19 @@ struct ArticlesScreen: View {
                         .fixedSize(horizontal: false, vertical: true)
                     }
                     .buttonStyle(RSSAppButtonStyle())
+                    .contextMenu(ContextMenu(menuItems: {
+                        Button {
+                            state.markAsRead(articleId: article.id, value: !article.markedAsRead) {
+                                self.refreshArticles()
+                            }
+                        } label: {
+                            if article.markedAsRead {
+                                Text("Mark as Unread")
+                            } else {
+                                Text("Mark as Read")
+                            }
+                        }
+                    }))
                 }
             }
         }

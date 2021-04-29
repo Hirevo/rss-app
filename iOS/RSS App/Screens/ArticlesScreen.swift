@@ -29,6 +29,19 @@ struct ArticlesScreen: View {
                             }
                         }
                     }
+                    .contextMenu(ContextMenu(menuItems: {
+                        Button {
+                            state.markAsRead(articleId: article.id, value: !article.markedAsRead) {
+                                self.refreshArticles()
+                            }
+                        } label: {
+                            if article.markedAsRead {
+                                Text("Mark as Unread")
+                            } else {
+                                Text("Mark as Read")
+                            }
+                        }
+                    }))
                 }
             }
         }
