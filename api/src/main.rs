@@ -28,6 +28,7 @@ pub mod utils;
 
 use crate::config::Config;
 use crate::utils::auth::AuthMiddleware;
+use crate::utils::cors::CorsMiddleware;
 use crate::utils::request_log::RequestLogger;
 use crate::utils::sessions::SqlStore;
 
@@ -99,6 +100,8 @@ async fn main() -> Result<(), Error> {
 
     log::info!("setting up request logger middleware");
     app.with(RequestLogger::new());
+    log::info!("setting up CORS middleware");
+    app.with(CorsMiddleware::new());
     log::info!("setting up session middleware");
     app.with(
         SessionMiddleware::new(store, sessions_config.secret.as_bytes())

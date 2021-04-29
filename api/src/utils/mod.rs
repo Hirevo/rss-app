@@ -3,6 +3,7 @@ use ring::rand::{SecureRandom, SystemRandom};
 
 /// Various authentication-related utilities.
 pub mod auth;
+pub mod cors;
 /// Utilities to issue logs about requests.
 pub mod request_log;
 /// Various utilities to assist building HTTP responses.
