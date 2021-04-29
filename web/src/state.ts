@@ -14,7 +14,7 @@ export class AppState {
     tokenData?: TokenData = undefined;
     profileData?: ProfileData = undefined;
 
-    static endpoint = "https://rss.polomack.eu";
+    static endpoint = "API_ORIGIN";
 
     get loggedIn(): boolean {
         return this.profileData != undefined;

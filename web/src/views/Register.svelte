@@ -75,7 +75,7 @@
                 <div class="separator"></div>
             </div>
             <div>
-                <a href={`https://rss.polomack.eu/auth/google?redirect_url=${encodeURIComponent("https://web.rss.polomack.eu/")}`}>
+                <a href={`API_ORIGIN/auth/google?redirect_url=${encodeURIComponent("APP_ORIGIN")}`}>
                     <Button>
                         <div class="google">
                             <div class="centered"><Icon icon={faGoogle} /></div>

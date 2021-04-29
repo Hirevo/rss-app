@@ -4,10 +4,14 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import typescript from '@rollup/plugin-typescript';
+import replace from '@rollup/plugin-replace';
 
 import autoPreprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
+
+const APP_ORIGIN = process.env.APP_ORIGIN || "http://localhost:4500";
+const API_ORIGIN = process.env.API_ORIGIN || "http://localhost:4501";
 
 export default {
 	input: 'src/main.ts',
@@ -18,6 +22,14 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
+        replace({
+            preventAssignment: true,
+            values: {
+                "APP_ORIGIN": APP_ORIGIN,
+                "API_ORIGIN": API_ORIGIN,
+            },
+        }),
+
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
