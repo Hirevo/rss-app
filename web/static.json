@@ -1,4 +1,12 @@
 {
     "root": "public",
-    "clean_urls": false
+    "clean_urls": false,
+    "routes": {
+        "/build/*": "/build/",
+        "/recursive/*": "/recursive/",
+        "/favicon.png": "favicon.png",
+        "/global.css": "global.css",
+        "/library.css": "library.css",
+        "/**": "index.html"
+    }
 }

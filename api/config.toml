@@ -1,0 +1,13 @@
+[general]
+bind_address = "0.0.0.0:3000"
+
+[database]
+url = "mysql://USER:PASSWORD@HOST:PORT/DATABASE_NAME"
+
+[google]
+client_id = "GOOGLE_CLIENT_ID_HERE"
+client_secret = "GOOGLE_CLIENT_SECRET_HERE"
+
+[sessions]
+cookie_name = "sid"
+secret = "5223e7306c9650ab0d1a7b7914ee0a0c72f0619d4e9d9285"
