@@ -48,7 +48,7 @@ pub async fn get_all(req: Request<State>) -> tide::Result {
 }
 
 pub async fn get(req: Request<State>) -> tide::Result {
-    let category = req.param("category")?.to_string();
+    let category = req.param("category-name")?.to_string();
 
     let user = match req.get_user() {
         Some(user) => user,
