@@ -6,8 +6,6 @@ extern crate diesel_migrations;
 use std::env;
 use std::sync::Arc;
 
-use async_std::fs;
-
 use color_eyre::eyre::Report;
 use tide::http::cookies::SameSite;
 use tide::http::headers::HeaderValue;
@@ -86,9 +84,12 @@ async fn main() -> Result<(), Error> {
     color_eyre::install()?;
     logs::init();
 
-    let contents = fs::read("config.toml").await?;
-    let config: Config = toml::from_slice(contents.as_slice())?;
-    let addr = if let Some(port) = env::var("PORT") {
+    let mut s = ::config::Config::new();
+    s.merge(::config::File::new("config", ::config::FileFormat::Toml).required(false))?;
+    s.merge(::config::Environment::with_prefix("app").separator("__"))?;
+    let config: Config = s.try_into()?;
+
+    let addr = if let Ok(port) = env::var("PORT") {
         format!("0.0.0.0:{}", port)
     } else {
         config.general.bind_address.clone()
