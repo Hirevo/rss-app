@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		98223E1C26393FA100BFE53A /* RSSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E1B26393FA100BFE53A /* RSSApp.swift */; };
+		98223E1E26393FA100BFE53A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E1D26393FA100BFE53A /* ContentView.swift */; };
+		98223E2026393FA300BFE53A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98223E1F26393FA300BFE53A /* Assets.xcassets */; };
+		98223E2326393FA300BFE53A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98223E2226393FA300BFE53A /* Preview Assets.xcassets */; };
+		98223E2F26393FA300BFE53A /* RSS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E2E26393FA300BFE53A /* RSS_AppTests.swift */; };
+		98223E3A26393FA300BFE53A /* RSS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E3926393FA300BFE53A /* RSS_AppUITests.swift */; };
+		98223E4F2639433F00BFE53A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E4E2639433F00BFE53A /* AppState.swift */; };
+		98223E602639434F00BFE53A /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E532639434F00BFE53A /* RootScreen.swift */; };
+		98223E612639434F00BFE53A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E542639434F00BFE53A /* SplashScreen.swift */; };
+		98223E622639434F00BFE53A /* CategoryFeedsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E552639434F00BFE53A /* CategoryFeedsScreen.swift */; };
+		98223E632639434F00BFE53A /* ArticleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E562639434F00BFE53A /* ArticleScreen.swift */; };
+		98223E642639434F00BFE53A /* ArticlesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E572639434F00BFE53A /* ArticlesScreen.swift */; };
+		98223E652639434F00BFE53A /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E582639434F00BFE53A /* RegisterScreen.swift */; };
+		98223E662639434F00BFE53A /* LandingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E592639434F00BFE53A /* LandingScreen.swift */; };
+		98223E672639434F00BFE53A /* TabsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E5A2639434F00BFE53A /* TabsScreen.swift */; };
+		98223E682639434F00BFE53A /* CategoriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E5B2639434F00BFE53A /* CategoriesScreen.swift */; };
+		98223E692639434F00BFE53A /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E5C2639434F00BFE53A /* SettingsScreen.swift */; };
+		98223E6A2639434F00BFE53A /* AddFeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E5D2639434F00BFE53A /* AddFeedScreen.swift */; };
+		98223E6B2639434F00BFE53A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E5E2639434F00BFE53A /* LoginScreen.swift */; };
+		98223E6C2639434F00BFE53A /* FeedsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E5F2639434F00BFE53A /* FeedsScreen.swift */; };
+		98223E782639460800BFE53A /* HTMLWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E742639460800BFE53A /* HTMLWebView.swift */; };
+		98223E792639460800BFE53A /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E752639460800BFE53A /* Types.swift */; };
+		98223E7A2639460800BFE53A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E762639460800BFE53A /* WebView.swift */; };
+		9883D0AF26395ACC003A07EF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883D0AE26395ACC003A07EF /* Styles.swift */; };
+		9883D0BD263962B7003A07EF /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883D0BC263962B7003A07EF /* Navbar.swift */; };
+		9883D0C226396579003A07EF /* BaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883D0C126396579003A07EF /* BaseScreen.swift */; };
+		9883D0C726396A29003A07EF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883D0C626396A29003A07EF /* HomeScreen.swift */; };
+		9883D0CD26396B89003A07EF /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 9883D0CC26396B89003A07EF /* WrappingHStack */; };
+		9883D0D3263A829C003A07EF /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 9883D0D2263A829C003A07EF /* BetterSafariView */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		98223E2B26393FA300BFE53A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98223E1026393FA100BFE53A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98223E1726393FA100BFE53A;
+			remoteInfo = "RSS App";
+		};
+		98223E3626393FA300BFE53A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98223E1026393FA100BFE53A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98223E1726393FA100BFE53A;
+			remoteInfo = "RSS App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		98223E1826393FA100BFE53A /* RSS App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSS App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98223E1B26393FA100BFE53A /* RSSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSApp.swift; sourceTree = "<group>"; };
+		98223E1D26393FA100BFE53A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		98223E1F26393FA300BFE53A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98223E2226393FA300BFE53A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98223E2426393FA300BFE53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98223E2526393FA300BFE53A /* RSS_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RSS_App.entitlements; sourceTree = "<group>"; };
+		98223E2A26393FA300BFE53A /* RSS AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSS AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98223E2E26393FA300BFE53A /* RSS_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSS_AppTests.swift; sourceTree = "<group>"; };
+		98223E3026393FA300BFE53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98223E3526393FA300BFE53A /* RSS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98223E3926393FA300BFE53A /* RSS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSS_AppUITests.swift; sourceTree = "<group>"; };
+		98223E3B26393FA300BFE53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98223E4E2639433F00BFE53A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = SOURCE_ROOT; };
+		98223E532639434F00BFE53A /* RootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
+		98223E542639434F00BFE53A /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		98223E552639434F00BFE53A /* CategoryFeedsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFeedsScreen.swift; sourceTree = "<group>"; };
+		98223E562639434F00BFE53A /* ArticleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleScreen.swift; sourceTree = "<group>"; };
+		98223E572639434F00BFE53A /* ArticlesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesScreen.swift; sourceTree = "<group>"; };
+		98223E582639434F00BFE53A /* RegisterScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		98223E592639434F00BFE53A /* LandingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingScreen.swift; sourceTree = "<group>"; };
+		98223E5A2639434F00BFE53A /* TabsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsScreen.swift; sourceTree = "<group>"; };
+		98223E5B2639434F00BFE53A /* CategoriesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesScreen.swift; sourceTree = "<group>"; };
+		98223E5C2639434F00BFE53A /* SettingsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		98223E5D2639434F00BFE53A /* AddFeedScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFeedScreen.swift; sourceTree = "<group>"; };
+		98223E5E2639434F00BFE53A /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		98223E5F2639434F00BFE53A /* FeedsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsScreen.swift; sourceTree = "<group>"; };
+		98223E742639460800BFE53A /* HTMLWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLWebView.swift; sourceTree = "<group>"; };
+		98223E752639460800BFE53A /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		98223E762639460800BFE53A /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9883D0AE26395ACC003A07EF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		9883D0BC263962B7003A07EF /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
+		9883D0C126396579003A07EF /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
+		9883D0C626396A29003A07EF /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98223E1526393FA100BFE53A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9883D0CD26396B89003A07EF /* WrappingHStack in Frameworks */,
+				9883D0D3263A829C003A07EF /* BetterSafariView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98223E2726393FA300BFE53A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98223E3226393FA300BFE53A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		98223E0F26393FA100BFE53A = {
+			isa = PBXGroup;
+			children = (
+				98223E1A26393FA100BFE53A /* RSS App */,
+				98223E2D26393FA300BFE53A /* RSS AppTests */,
+				98223E3826393FA300BFE53A /* RSS AppUITests */,
+				98223E1926393FA100BFE53A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98223E1926393FA100BFE53A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98223E1826393FA100BFE53A /* RSS App.app */,
+				98223E2A26393FA300BFE53A /* RSS AppTests.xctest */,
+				98223E3526393FA300BFE53A /* RSS AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98223E1A26393FA100BFE53A /* RSS App */ = {
+			isa = PBXGroup;
+			children = (
+				9883D0B326395E7F003A07EF /* Views */,
+				98223E4A26393FD700BFE53A /* Screens */,
+				98223E1B26393FA100BFE53A /* RSSApp.swift */,
+				98223E742639460800BFE53A /* HTMLWebView.swift */,
+				98223E752639460800BFE53A /* Types.swift */,
+				98223E762639460800BFE53A /* WebView.swift */,
+				98223E1D26393FA100BFE53A /* ContentView.swift */,
+				98223E4E2639433F00BFE53A /* AppState.swift */,
+				98223E1F26393FA300BFE53A /* Assets.xcassets */,
+				98223E2426393FA300BFE53A /* Info.plist */,
+				98223E2526393FA300BFE53A /* RSS_App.entitlements */,
+				98223E2126393FA300BFE53A /* Preview Content */,
+				9883D0AE26395ACC003A07EF /* Styles.swift */,
+			);
+			path = "RSS App";
+			sourceTree = "<group>";
+		};
+		98223E2126393FA300BFE53A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				98223E2226393FA300BFE53A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		98223E2D26393FA300BFE53A /* RSS AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				98223E2E26393FA300BFE53A /* RSS_AppTests.swift */,
+				98223E3026393FA300BFE53A /* Info.plist */,
+			);
+			path = "RSS AppTests";
+			sourceTree = "<group>";
+		};
+		98223E3826393FA300BFE53A /* RSS AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				98223E3926393FA300BFE53A /* RSS_AppUITests.swift */,
+				98223E3B26393FA300BFE53A /* Info.plist */,
+			);
+			path = "RSS AppUITests";
+			sourceTree = "<group>";
+		};
+		98223E4A26393FD700BFE53A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				98223E5D2639434F00BFE53A /* AddFeedScreen.swift */,
+				98223E562639434F00BFE53A /* ArticleScreen.swift */,
+				98223E572639434F00BFE53A /* ArticlesScreen.swift */,
+				98223E5B2639434F00BFE53A /* CategoriesScreen.swift */,
+				98223E552639434F00BFE53A /* CategoryFeedsScreen.swift */,
+				98223E5F2639434F00BFE53A /* FeedsScreen.swift */,
+				98223E592639434F00BFE53A /* LandingScreen.swift */,
+				98223E5E2639434F00BFE53A /* LoginScreen.swift */,
+				98223E582639434F00BFE53A /* RegisterScreen.swift */,
+				98223E532639434F00BFE53A /* RootScreen.swift */,
+				98223E5C2639434F00BFE53A /* SettingsScreen.swift */,
+				98223E542639434F00BFE53A /* SplashScreen.swift */,
+				98223E5A2639434F00BFE53A /* TabsScreen.swift */,
+				9883D0C126396579003A07EF /* BaseScreen.swift */,
+				9883D0C626396A29003A07EF /* HomeScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9883D0B326395E7F003A07EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9883D0BC263962B7003A07EF /* Navbar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98223E1726393FA100BFE53A /* RSS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98223E3E26393FA300BFE53A /* Build configuration list for PBXNativeTarget "RSS App" */;
+			buildPhases = (
+				98223E1426393FA100BFE53A /* Sources */,
+				98223E1526393FA100BFE53A /* Frameworks */,
+				98223E1626393FA100BFE53A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RSS App";
+			packageProductDependencies = (
+				9883D0CC26396B89003A07EF /* WrappingHStack */,
+				9883D0D2263A829C003A07EF /* BetterSafariView */,
+			);
+			productName = "RSS App";
+			productReference = 98223E1826393FA100BFE53A /* RSS App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		98223E2926393FA300BFE53A /* RSS AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98223E4126393FA300BFE53A /* Build configuration list for PBXNativeTarget "RSS AppTests" */;
+			buildPhases = (
+				98223E2626393FA300BFE53A /* Sources */,
+				98223E2726393FA300BFE53A /* Frameworks */,
+				98223E2826393FA300BFE53A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98223E2C26393FA300BFE53A /* PBXTargetDependency */,
+			);
+			name = "RSS AppTests";
+			productName = "RSS AppTests";
+			productReference = 98223E2A26393FA300BFE53A /* RSS AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		98223E3426393FA300BFE53A /* RSS AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98223E4426393FA300BFE53A /* Build configuration list for PBXNativeTarget "RSS AppUITests" */;
+			buildPhases = (
+				98223E3126393FA300BFE53A /* Sources */,
+				98223E3226393FA300BFE53A /* Frameworks */,
+				98223E3326393FA300BFE53A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98223E3726393FA300BFE53A /* PBXTargetDependency */,
+			);
+			name = "RSS AppUITests";
+			productName = "RSS AppUITests";
+			productReference = 98223E3526393FA300BFE53A /* RSS AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98223E1026393FA100BFE53A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					98223E1726393FA100BFE53A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					98223E2926393FA300BFE53A = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 98223E1726393FA100BFE53A;
+					};
+					98223E3426393FA300BFE53A = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 98223E1726393FA100BFE53A;
+					};
+				};
+			};
+			buildConfigurationList = 98223E1326393FA100BFE53A /* Build configuration list for PBXProject "RSS App" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 98223E0F26393FA100BFE53A;
+			packageReferences = (
+				9883D0CB26396B89003A07EF /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				9883D0D1263A829C003A07EF /* XCRemoteSwiftPackageReference "BetterSafariView" */,
+			);
+			productRefGroup = 98223E1926393FA100BFE53A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98223E1726393FA100BFE53A /* RSS App */,
+				98223E2926393FA300BFE53A /* RSS AppTests */,
+				98223E3426393FA300BFE53A /* RSS AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98223E1626393FA100BFE53A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98223E2326393FA300BFE53A /* Preview Assets.xcassets in Resources */,
+				98223E2026393FA300BFE53A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98223E2826393FA300BFE53A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98223E3326393FA300BFE53A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98223E1426393FA100BFE53A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9883D0BD263962B7003A07EF /* Navbar.swift in Sources */,
+				98223E672639434F00BFE53A /* TabsScreen.swift in Sources */,
+				98223E7A2639460800BFE53A /* WebView.swift in Sources */,
+				98223E612639434F00BFE53A /* SplashScreen.swift in Sources */,
+				98223E782639460800BFE53A /* HTMLWebView.swift in Sources */,
+				98223E622639434F00BFE53A /* CategoryFeedsScreen.swift in Sources */,
+				98223E792639460800BFE53A /* Types.swift in Sources */,
+				98223E6C2639434F00BFE53A /* FeedsScreen.swift in Sources */,
+				98223E4F2639433F00BFE53A /* AppState.swift in Sources */,
+				98223E652639434F00BFE53A /* RegisterScreen.swift in Sources */,
+				98223E6A2639434F00BFE53A /* AddFeedScreen.swift in Sources */,
+				98223E1E26393FA100BFE53A /* ContentView.swift in Sources */,
+				9883D0C226396579003A07EF /* BaseScreen.swift in Sources */,
+				9883D0AF26395ACC003A07EF /* Styles.swift in Sources */,
+				98223E662639434F00BFE53A /* LandingScreen.swift in Sources */,
+				98223E692639434F00BFE53A /* SettingsScreen.swift in Sources */,
+				98223E1C26393FA100BFE53A /* RSSApp.swift in Sources */,
+				98223E602639434F00BFE53A /* RootScreen.swift in Sources */,
+				98223E642639434F00BFE53A /* ArticlesScreen.swift in Sources */,
+				98223E632639434F00BFE53A /* ArticleScreen.swift in Sources */,
+				9883D0C726396A29003A07EF /* HomeScreen.swift in Sources */,
+				98223E682639434F00BFE53A /* CategoriesScreen.swift in Sources */,
+				98223E6B2639434F00BFE53A /* LoginScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98223E2626393FA300BFE53A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98223E2F26393FA300BFE53A /* RSS_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98223E3126393FA300BFE53A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98223E3A26393FA300BFE53A /* RSS_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		98223E2C26393FA300BFE53A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98223E1726393FA100BFE53A /* RSS App */;
+			targetProxy = 98223E2B26393FA300BFE53A /* PBXContainerItemProxy */;
+		};
+		98223E3726393FA300BFE53A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98223E1726393FA100BFE53A /* RSS App */;
+			targetProxy = 98223E3626393FA300BFE53A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		98223E3C26393FA300BFE53A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		98223E3D26393FA300BFE53A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		98223E3F26393FA300BFE53A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RSS App/RSS_App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"RSS App/Preview Content\"";
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "RSS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		98223E4026393FA300BFE53A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RSS App/RSS_App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"RSS App/Preview Content\"";
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "RSS App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		98223E4226393FA300BFE53A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSS App.app/Contents/MacOS/RSS App";
+			};
+			name = Debug;
+		};
+		98223E4326393FA300BFE53A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSS App.app/Contents/MacOS/RSS App";
+			};
+			name = Release;
+		};
+		98223E4526393FA300BFE53A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "RSS App";
+			};
+			name = Debug;
+		};
+		98223E4626393FA300BFE53A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BSJU86XC22;
+				INFOPLIST_FILE = "RSS AppUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.polomack.RSS-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "RSS App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98223E1326393FA100BFE53A /* Build configuration list for PBXProject "RSS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98223E3C26393FA300BFE53A /* Debug */,
+				98223E3D26393FA300BFE53A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98223E3E26393FA300BFE53A /* Build configuration list for PBXNativeTarget "RSS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98223E3F26393FA300BFE53A /* Debug */,
+				98223E4026393FA300BFE53A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98223E4126393FA300BFE53A /* Build configuration list for PBXNativeTarget "RSS AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98223E4226393FA300BFE53A /* Debug */,
+				98223E4326393FA300BFE53A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98223E4426393FA300BFE53A /* Build configuration list for PBXNativeTarget "RSS AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98223E4526393FA300BFE53A /* Debug */,
+				98223E4626393FA300BFE53A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9883D0CB26396B89003A07EF /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
+		9883D0D1263A829C003A07EF /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9883D0CC26396B89003A07EF /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9883D0CB26396B89003A07EF /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
+		9883D0D2263A829C003A07EF /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9883D0D1263A829C003A07EF /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 98223E1026393FA100BFE53A /* Project object */;
+}
