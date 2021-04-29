@@ -49,7 +49,9 @@ pub async fn get_all(req: Request<State>) -> tide::Result {
 
 pub async fn get(req: Request<State>) -> tide::Result {
     let category = req.param("category-name")?;
-    let category = percent_encoding::percent_decode_str(category).decode_utf8_lossy().into_owned();
+    let category = percent_encoding::percent_decode_str(category)
+        .decode_utf8_lossy()
+        .into_owned();
 
     let user = match req.get_user() {
         Some(user) => user,

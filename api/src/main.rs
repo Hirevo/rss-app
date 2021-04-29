@@ -3,6 +3,7 @@ extern crate diesel;
 #[macro_use]
 extern crate diesel_migrations;
 
+use std::env;
 use std::sync::Arc;
 
 use async_std::fs;
@@ -87,7 +88,11 @@ async fn main() -> Result<(), Error> {
 
     let contents = fs::read("config.toml").await?;
     let config: Config = toml::from_slice(contents.as_slice())?;
-    let addr = config.general.bind_address.clone();
+    let addr = if let Some(port) = env::var("PORT") {
+        format!("0.0.0.0:{}", port)
+    } else {
+        config.general.bind_address.clone()
+    };
     let sessions_config = config.sessions.clone();
 
     let state: Arc<config::State> = Arc::new(config.into());
