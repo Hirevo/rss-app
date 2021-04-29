@@ -4,11 +4,18 @@ import SwiftUI
 struct ArticleScreen: View {
     var article: Article
 
+    @EnvironmentObject private var state: AppState
+
     var body: some View {
-        if let htmlContent = article.htmlContent {
-            HTMLWebView(html: htmlContent).navigationTitle(article.title)
-        } else if let url = article.url {
-            WebView(url: url).navigationTitle(article.title)
+        VStack(spacing: 0) {
+            if let htmlContent = article.htmlContent {
+                HTMLWebView(html: htmlContent).navigationTitle(article.title)
+            } else if let url = article.url {
+                WebView(url: url).navigationTitle(article.title)
+            }
+        }
+        .onAppear {
+            state.markAsRead(articleId: article.id)
         }
     }
 }

@@ -52,9 +52,6 @@ fn api_routes(state: State) -> Server<State> {
         Ok(res)
     }));
 
-    log::info!("mounting '/api/v1/account/register'");
-    app.at("/hello").get(api::get);
-
     log::info!("mounting '/api/v1/account/me'");
     app.at("/account/me").get(api::account::me::get);
 
@@ -72,7 +69,9 @@ fn api_routes(state: State) -> Server<State> {
         .get(api::feed::get)
         .delete(api::feed::delete);
     log::info!("mounting '/api/v1/article/:article-id'");
-    app.at("/article/:article-id").get(api::article::get);
+    app.at("/article/:article-id")
+        .get(api::article::get)
+        .post(api::article::post);
 
     app
 }

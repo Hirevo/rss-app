@@ -453,6 +453,50 @@ class AppState: ObservableObject {
 
         dataTask.resume()
     }
+
+    func markAsRead(articleId: String, value: Bool = true, onCompletion: @escaping () -> Void = {}) {
+        guard let articleId = articleId.addingPercentEncoding(withAllowedCharacters: .alphanumerics) else {
+            DispatchQueue.main.schedule {
+                onCompletion()
+            }
+            return
+        }
+
+        guard let tokenData = self.tokenData, let url = URL(string: "\(Self.endpoint)/api/v1/article/\(articleId)") else {
+            DispatchQueue.main.schedule {
+                onCompletion()
+            }
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(tokenData.token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONEncoder().encode([
+            "read": value,
+        ])
+
+        let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let response = response as? HTTPURLResponse, error == nil else {
+                DispatchQueue.main.schedule {
+                    onCompletion()
+                }
+                return
+            }
+
+            if response.statusCode != 200 {
+                DispatchQueue.main.schedule {
+                    onCompletion()
+                }
+                return
+            }
+
+            onCompletion()
+        }
+
+        dataTask.resume()
+    }
 }
 
 extension Dictionary {

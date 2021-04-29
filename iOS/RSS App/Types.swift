@@ -8,7 +8,7 @@ struct Feed: Decodable, Identifiable {
 }
 
 struct Article: Decodable, Identifiable {
-//    var markedAsRead: Bool
+    var markedAsRead: Bool
     var id: String
     var feedId: String
     var title: String

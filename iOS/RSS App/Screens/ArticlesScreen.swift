@@ -19,7 +19,15 @@ struct ArticlesScreen: View {
             } else {
                 ForEach(articles) { article in
                     NavigationLink(destination: ArticleScreen(article: article)) {
-                        Text(article.title).lineLimit(1)
+                        HStack(spacing: 10) {
+                            Text(article.title).lineLimit(1)
+
+                            Spacer()
+
+                            if article.markedAsRead {
+                                Image(systemName: "checkmark.circle.fill")
+                            }
+                        }
                     }
                 }
             }

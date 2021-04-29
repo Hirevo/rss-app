@@ -1,4 +1,4 @@
-use tide::{Request, Response};
+use serde::{Deserialize, Serialize};
 
 pub mod account;
 pub mod article;
@@ -7,8 +7,12 @@ pub mod categories;
 pub mod feed;
 pub mod feeds;
 
-use crate::State;
-
-pub async fn get(_: Request<State>) -> tide::Result {
-    Ok(Response::builder(200).body("hello, world !").build())
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct ArticleWithReadMarker {
+    pub id: String,
+    pub feed_id: String,
+    pub title: String,
+    pub url: Option<String>,
+    pub html_content: Option<String>,
+    pub marked_as_read: bool,
 }
