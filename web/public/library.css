@@ -1,0 +1,33 @@
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hstack {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.vstack {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.zstack {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "stack";
+}
+
+.zstack > * {
+    grid-area: stack;
+}
+
+.nowrap {
+    flex-wrap: nowrap;
+}

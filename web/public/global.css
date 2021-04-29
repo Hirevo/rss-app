@@ -1,0 +1,55 @@
+@font-face {
+    font-family: Recursive;
+    src: url("/recursive/recursive.woff2") format("woff2-variations");
+    font-weight: 400 700;
+    font-display: block;
+}
+
+html {
+    --dark-color: #171717;
+    --light-color: #E0E0E0;
+
+    --fg-color: var(--dark-color);
+    --bg-color: var(--light-color);
+}
+
+html.dark {
+    --fg-color: var(--light-color);
+    --bg-color: var(--dark-color);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+
+    transition: color 0.25s, background-color 0.25s;
+
+    --font-mono: 0;
+    --font-casl: 0;
+    --font-wght: 600;
+    --font-slnt: 0;
+}
+
+* {
+    box-sizing: border-box;
+
+    font-display: block;
+    font-family: Recursive, "Fira Sans", sans-serif;
+    font-variation-settings: "MONO" var(--font-mono), "CASL" var(--font-casl),
+        "wght" var(--font-wght), "slnt" var(--font-slnt);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.markdown * {
+    margin: 2px;
+}
