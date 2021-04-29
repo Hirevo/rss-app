@@ -9,6 +9,7 @@ use async_std::fs;
 
 use color_eyre::eyre::Report;
 use tide::http::cookies::SameSite;
+use tide::http::headers::HeaderValue;
 use tide::sessions::SessionMiddleware;
 use tide::utils::After;
 use tide::{Response, Server};
@@ -101,7 +102,13 @@ async fn main() -> Result<(), Error> {
     log::info!("setting up request logger middleware");
     app.with(RequestLogger::new());
     log::info!("setting up CORS middleware");
-    app.with(CorsMiddleware::new());
+    app.with(
+        CorsMiddleware::new().methods(
+            "GET, POST, PUT, DELETE, OPTIONS"
+                .parse::<HeaderValue>()
+                .unwrap(),
+        ),
+    );
     log::info!("setting up session middleware");
     app.with(
         SessionMiddleware::new(store, sessions_config.secret.as_bytes())
