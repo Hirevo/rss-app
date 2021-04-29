@@ -13,7 +13,6 @@
 		98223E2326393FA300BFE53A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98223E2226393FA300BFE53A /* Preview Assets.xcassets */; };
 		98223E2F26393FA300BFE53A /* RSS_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E2E26393FA300BFE53A /* RSS_AppTests.swift */; };
 		98223E3A26393FA300BFE53A /* RSS_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E3926393FA300BFE53A /* RSS_AppUITests.swift */; };
-		98223E4F2639433F00BFE53A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E4E2639433F00BFE53A /* AppState.swift */; };
 		98223E602639434F00BFE53A /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E532639434F00BFE53A /* RootScreen.swift */; };
 		98223E612639434F00BFE53A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E542639434F00BFE53A /* SplashScreen.swift */; };
 		98223E622639434F00BFE53A /* CategoryFeedsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98223E552639434F00BFE53A /* CategoryFeedsScreen.swift */; };
@@ -36,6 +35,7 @@
 		9883D0C726396A29003A07EF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883D0C626396A29003A07EF /* HomeScreen.swift */; };
 		9883D0CD26396B89003A07EF /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 9883D0CC26396B89003A07EF /* WrappingHStack */; };
 		9883D0D3263A829C003A07EF /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = 9883D0D2263A829C003A07EF /* BetterSafariView */; };
+		98D1AE5D263B1D52006FD646 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AE5C263B1D52006FD646 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 		98223E3526393FA300BFE53A /* RSS AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSS AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98223E3926393FA300BFE53A /* RSS_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSS_AppUITests.swift; sourceTree = "<group>"; };
 		98223E3B26393FA300BFE53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98223E4E2639433F00BFE53A /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = SOURCE_ROOT; };
 		98223E532639434F00BFE53A /* RootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
 		98223E542639434F00BFE53A /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		98223E552639434F00BFE53A /* CategoryFeedsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFeedsScreen.swift; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		9883D0BC263962B7003A07EF /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		9883D0C126396579003A07EF /* BaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreen.swift; sourceTree = "<group>"; };
 		9883D0C626396A29003A07EF /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		98D1AE5C263B1D52006FD646 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 				98223E752639460800BFE53A /* Types.swift */,
 				98223E762639460800BFE53A /* WebView.swift */,
 				98223E1D26393FA100BFE53A /* ContentView.swift */,
-				98223E4E2639433F00BFE53A /* AppState.swift */,
+				98D1AE5C263B1D52006FD646 /* AppState.swift */,
 				98223E1F26393FA300BFE53A /* Assets.xcassets */,
 				98223E2426393FA300BFE53A /* Info.plist */,
 				98223E2526393FA300BFE53A /* RSS_App.entitlements */,
@@ -355,12 +355,12 @@
 				9883D0BD263962B7003A07EF /* Navbar.swift in Sources */,
 				98223E672639434F00BFE53A /* TabsScreen.swift in Sources */,
 				98223E7A2639460800BFE53A /* WebView.swift in Sources */,
+				98D1AE5D263B1D52006FD646 /* AppState.swift in Sources */,
 				98223E612639434F00BFE53A /* SplashScreen.swift in Sources */,
 				98223E782639460800BFE53A /* HTMLWebView.swift in Sources */,
 				98223E622639434F00BFE53A /* CategoryFeedsScreen.swift in Sources */,
 				98223E792639460800BFE53A /* Types.swift in Sources */,
 				98223E6C2639434F00BFE53A /* FeedsScreen.swift in Sources */,
-				98223E4F2639433F00BFE53A /* AppState.swift in Sources */,
 				98223E652639434F00BFE53A /* RegisterScreen.swift in Sources */,
 				98223E6A2639434F00BFE53A /* AddFeedScreen.swift in Sources */,
 				98223E1E26393FA100BFE53A /* ContentView.swift in Sources */,
