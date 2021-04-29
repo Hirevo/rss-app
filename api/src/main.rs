@@ -60,7 +60,9 @@ fn api_routes(state: State) -> Server<State> {
     log::info!("mounting '/api/v1/feeds'");
     app.at("/feeds").get(api::feeds::get).put(api::feeds::put);
     log::info!("mounting '/api/v1/categories'");
-    app.at("/categories").get(api::categories::get);
+    app.at("/categories").get(api::categories::get_all);
+    log::info!("mounting '/api/v1/category/:category-name'");
+    app.at("/category/:category-name").get(api::categories::get);
     log::info!("mounting '/api/v1/articles'");
     app.at("/articles").get(api::articles::get_all);
     log::info!("mounting '/api/v1/articles/:feed-id'");

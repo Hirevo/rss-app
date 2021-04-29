@@ -9,7 +9,7 @@ use crate::utils;
 use crate::utils::auth::AuthExt;
 use crate::State;
 
-pub async fn get(req: Request<State>) -> tide::Result {
+pub async fn get_all(req: Request<State>) -> tide::Result {
     let user = match req.get_user() {
         Some(user) => user,
         None => {
@@ -45,4 +45,37 @@ pub async fn get(req: Request<State>) -> tide::Result {
     }
 
     Ok(utils::response::json(&categories))
+}
+
+pub async fn get(req: Request<State>) -> tide::Result {
+    let category = req.param("category")?.to_string();
+
+    let user = match req.get_user() {
+        Some(user) => user,
+        None => {
+            return Ok(utils::response::error(
+                StatusCode::Unauthorized,
+                "you are not currently logged in",
+            ));
+        }
+    };
+
+    let feeds: Vec<Feed> = req
+        .state()
+        .repo
+        .run({
+            let user_id = user.id.clone();
+            move |conn| {
+                feeds::table
+                    .inner_join(feed_categories::table)
+                    .inner_join(subscriptions::table)
+                    .select(feeds::all_columns)
+                    .filter(subscriptions::user_id.eq(user_id))
+                    .filter(feed_categories::category_name.eq(&category))
+                    .load(conn)
+            }
+        })
+        .await?;
+
+    Ok(utils::response::json(&feeds))
 }
