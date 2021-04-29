@@ -1,11 +1,11 @@
 <div align=center><h1>RSS App</h1></div>
 <div align=center><strong>Subscribe to and read from RSS feeds, everywhere</strong></div>
 
-**API is deployed live at: <https://rss.polomack.eu>**
-**Frontend is deployed live at: <https://app.rss.polomack.eu>**
-
 About
 -----
+
+**API is deployed live at: <https://rss.polomack.eu>**  
+**Frontend is deployed live at: <https://app.rss.polomack.eu>**
 
 This is the development repository for **`RSS App`**, an application to subscribe and follow RSS feeds.
 
@@ -17,7 +17,7 @@ The app is composed of:
   - A macOS application, also using [**SwiftUI**](https://developer.apple.com/xcode/swiftui/)
   - A Web frontend, written using [**Svelte**](https://svelte.dev)
 
-Both the API server and the Web frontend are continuously deployed from this repository using [**`Heroku`**](https://heroku.com).
+Both the API server and the Web frontend are continuously deployed from this repository using [**Heroku**](https://heroku.com).
 
 You can find more information about each components in their respective folders:
 
