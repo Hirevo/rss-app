@@ -18,6 +18,7 @@ jobs:
           project-path: iOS/RSS App.xcodeproj
           p12-base64: ${{ secrets.P12_BASE64 }}
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+          certificate-password: ${{ secrets.P12_PASSWORD }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
           workspace-path: iOS/RSS App.xcworkspace
