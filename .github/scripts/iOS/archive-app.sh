@@ -7,5 +7,6 @@ xcodebuild -workspace './iOS/RSS App.xcworkspace' \
     -sdk iphoneos \
     -configuration Release \
     -archivePath 'build/iOS/RSS App.xcarchive' \
+    -allowProvisioningUpdates \
     clean archive | xcpretty
 

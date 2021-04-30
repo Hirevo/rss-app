@@ -2,8 +2,8 @@
 
 set -eo pipefail
 
-xcodebuild -archivePath 'build/iOS/RSS App.xcarchive' \
+xcodebuild -archivePath "${PWD}/build/iOS/RSS App.xcarchive" \
     -exportOptionsPlist 'iOS/exportOptions.plist' \
-    -exportPath 'build/iOS' \
+    -exportPath "${PWD}/build/iOS" \
     -allowProvisioningUpdates \
     -exportArchive | xcpretty
