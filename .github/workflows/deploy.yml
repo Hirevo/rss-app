@@ -20,7 +20,7 @@ jobs:
           mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           team-id: ${{ secrets.TEAM_ID }}
-          workspace-path: iOS/RSS App.xcodeworkspace
+          workspace-path: iOS/RSS App.xcworkspace
           scheme: RSS App
           export-method: ad-hoc
           export-options: iOS/exportOptions.plist
