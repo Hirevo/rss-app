@@ -11,7 +11,7 @@
 	<true/>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>eu.polomack.RSS-App</key>
+		<key>eu.polomack.RSSApp</key>
 		<string>RSS App iOS Provisioning Profile</string>
 	</dict>
 </dict>
