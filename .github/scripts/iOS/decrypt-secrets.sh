@@ -2,18 +2,23 @@
 
 set -eo pipefail
 
-gpg --quiet --batch --yes --decrypt --passphrase="${IOS_KEYS}" --output ./.github/secrets/RSS_App_iOS_Provisioning_Profile.mobileprovision ./.github/secrets/RSS_App_iOS_Provisioning_Profile.mobileprovision.gpg
-gpg --quiet --batch --yes --decrypt --passphrase="${IOS_KEYS}" --output ./.github/secrets/RSS_App_iOS_Distribution.cer ./.github/secrets/RSS_App_iOS_Distribution.cer.gpg
+KEYCHAIN_PATH="${HOME}/Library/Keychains/build.keychain";
+KEYCHAIN_PASSWORD="";
 
-mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+CERTIFICATE_PATH="./.github/secrets/RSS_App_iOS_Certificate.p12";
+PROFILE_PATH="./.github/secrets/RSS_App_iOS_Provisioning_Profile.mobileprovision";
 
-cp ./.github/secrets/RSS_App_iOS_Provisioning_Profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/RSS_App_iOS_Provisioning_Profile.mobileprovision
+gpg --quiet --batch --yes --decrypt --passphrase="${IOS_KEYS}" --output "${PROFILE_PATH}" "${PROFILE_PATH}.gpg"
+gpg --quiet --batch --yes --decrypt --passphrase="${IOS_KEYS}" --output "${CERTIFICATE_PATH}" "${CERTIFICATE_PATH}.gpg"
 
-security create-keychain -p "" build.keychain
-security import ./.github/secrets/RSS_App_iOS_Distribution.cer -t agg -k ~/Library/Keychains/build.keychain -P "" -A
+security create-keychain -p "${KEYCHAIN_PASSWORD}" "${KEYCHAIN_PATH}";
+security set-keychain-settings -lut 21600 "${KEYCHAIN_PATH}";
+security unlock-keychain -p "${KEYCHAIN_PASSWORD}" "${KEYCHAIN_PATH}";
 
-security list-keychains -s ~/Library/Keychains/build.keychain
-security default-keychain -s ~/Library/Keychains/build.keychain
-security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+# import certificate to keychain
+security import "${CERTIFICATE_PATH}" -P "${IOS_P12_PASSWORD}" -A -t cert -f pkcs12 -k "${KEYCHAIN_PATH}";
+security list-keychain -d user -s "${KEYCHAIN_PATH}";
 
-security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
+# apply provisioning profile
+mkdir -p "${HOME}/Library/MobileDevice/Provisioning Profiles"
+cp $PP_PATH "${HOME}/Library/MobileDevice/Provisioning Profiles"

@@ -17,6 +17,7 @@ jobs:
       - name: Setup provisioning profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
+          IOS_P12_PASSWORD: ${{ secrets.IOS_P12_PASSWORD }}
         run: ./.github/scripts/iOS/decrypt-secrets.sh
       - name: Archiving project
         run: ./.github/scripts/iOS/archive-app.sh
