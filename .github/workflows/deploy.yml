@@ -12,17 +12,18 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Install gpg
-        run: brew install gnupg
-      - name: Setup provisioning profile
-        env:
-          IOS_KEYS: ${{ secrets.IOS_KEYS }}
-          IOS_P12_PASSWORD: ${{ secrets.IOS_P12_PASSWORD }}
-        run: ./.github/scripts/iOS/decrypt-secrets.sh
-      - name: Archiving project
-        run: ./.github/scripts/iOS/archive-app.sh
-      - name: Exporting .ipa
-        run: ./.github/scripts/iOS/export-ipa.sh
+      - name: Build iOS app into IPA
+        uses: yukiarrr/ios-build-action@v1.4.0
+        with:
+          project-path: iOS/RSS App.xcodeproj
+          p12-base64: ${{ secrets.P12_BASE64 }}
+          mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+          code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
+          team-id: ${{ secrets.TEAM_ID }}
+          workspace-path: iOS/RSS App.xcodeworkspace
+          scheme: RSS App
+          export-method: ad-hoc
+          export-options: iOS/exportOptions.plist
       - name: Move to static folder
         run: |
           mkdir -p 'web/public/apps/iOS'
