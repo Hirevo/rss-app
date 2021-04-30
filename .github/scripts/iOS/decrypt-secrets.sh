@@ -21,4 +21,4 @@ security list-keychain -d user -s "${KEYCHAIN_PATH}";
 
 # apply provisioning profile
 mkdir -p "${HOME}/Library/MobileDevice/Provisioning Profiles"
-cp $PP_PATH "${HOME}/Library/MobileDevice/Provisioning Profiles"
+cp "${PROFILE_PATH}" "${HOME}/Library/MobileDevice/Provisioning Profiles"
