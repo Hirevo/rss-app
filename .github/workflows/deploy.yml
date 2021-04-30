@@ -17,13 +17,38 @@ jobs:
       - name: Setup provisioning profile
         env:
           IOS_KEYS: ${{ secrets.IOS_KEYS }}
-        run: ./.github/scripts/iOS/decrypt-secrets.sh
+        run: |
+          gpg --quiet --batch --yes --decrypt --passphrase="${IOS_KEYS}" --output ./.github/secrets/RSS_App_iOS_Provisioning_Profile.mobileprovision ./.github/secrets/RSS_App_iOS_Provisioning_Profile.mobileprovision.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="${IOS_KEYS}" --output ./.github/secrets/RSS_App_iOS_Distribution.cer ./.github/secrets/RSS_App_iOS_Distribution.cer.gpg
+
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+
+          cp ./.github/secrets/RSS_App_iOS_Provisioning_Profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/RSS_App_iOS_Provisioning_Profile.mobileprovision
+
+          security create-keychain -p "" build.keychain
+          security import ./.github/secrets/RSS_App_iOS_Distribution.cer -t agg -k ~/Library/Keychains/build.keychain -P "" -A
+
+          security list-keychains -s ~/Library/Keychains/build.keychain
+          security default-keychain -s ~/Library/Keychains/build.keychain
+          security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
       - name: Archiving project
-        run: ./.github/scripts/iOS/archive-app.sh
+        run: |
+          xcodebuild -workspace './iOS/RSS App.xcworkspace' \
+            -scheme 'RSS App' \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath 'build/iOS/RSS App.xcarchive' \
+            clean archive | xcpretty
       - name: Exporting .ipa
-        run: ./.github/scripts/iOS/export-ipa.sh
+        run: xcodebuild -archivePath 'build/iOS/RSS App.xcarchive' \
+          -exportOptionsPlist 'iOS/exportOptions.plist' \
+          -exportPath 'build/iOS' \
+          -allowProvisioningUpdates \
+          -exportArchive | xcpretty
       - name: Move to static folder
         run: |
           mkdir -p 'web/public/apps/iOS'
           mv 'build/iOS/RSS App.ipa' 'web/public/apps/iOS/RSS App.ipa'
-  
+
